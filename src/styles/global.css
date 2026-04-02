@@ -1,0 +1,237 @@
+/* ===============================
+   iDentist — Global Design System
+   =============================== */
+:root {
+  /* Core palette */
+  --navy:        #0d1b2a;
+  --navy-mid:    #122236;
+  --navy-light:  #1a3050;
+  --navy-card:   #162840;
+
+  --blue:        #2196f3;
+  --blue-bright: #42a5f5;
+  --blue-glow:   rgba(33,150,243,0.18);
+  --blue-pale:   rgba(33,150,243,0.08);
+
+  --gold:        #f5b800;
+  --gold-light:  #fdd835;
+  --gold-pale:   rgba(245,184,0,0.12);
+
+  --white:       #ffffff;
+  --off-white:   #f0f4f8;
+  --text-primary: #e8f0fe;
+  --text-muted:  rgba(232,240,254,0.55);
+  --border:      rgba(255,255,255,0.08);
+  --border-blue: rgba(33,150,243,0.25);
+
+  --success:     #4caf50;
+  --error:       #ef5350;
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'Nunito', sans-serif;
+
+  /* Shadows */
+  --shadow-sm:   0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md:   0 8px 32px rgba(0,0,0,0.35);
+  --shadow-lg:   0 20px 60px rgba(0,0,0,0.4);
+  --shadow-blue: 0 8px 32px rgba(33,150,243,0.3);
+  --shadow-gold: 0 8px 32px rgba(245,184,0,0.25);
+
+  /* Radii */
+  --r-sm:  8px;
+  --r-md:  16px;
+  --r-lg:  24px;
+  --r-xl:  40px;
+
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-w: 1160px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--navy);
+  color: var(--text-primary);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, select, textarea { font-family: inherit; }
+ul { list-style: none; }
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- Utility classes ---- */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue-bright);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--blue);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-top: 14px;
+}
+
+/* Buttons */
+.btn-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--blue);
+  color: var(--white);
+  padding: 14px 30px;
+  border-radius: var(--r-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  transition: var(--transition);
+  box-shadow: var(--shadow-blue);
+  white-space: nowrap;
+}
+.btn-blue:hover {
+  background: var(--blue-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(33,150,243,0.45);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 14px 30px;
+  border-radius: var(--r-sm);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  transition: var(--transition);
+  box-shadow: var(--shadow-gold);
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(245,184,0,0.4);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+  color: var(--text-primary);
+  padding: 13px 28px;
+  border-radius: var(--r-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  border: 1.5px solid var(--border);
+  transition: var(--transition);
+}
+.btn-ghost:hover {
+  border-color: var(--blue);
+  color: var(--blue-bright);
+  background: var(--blue-pale);
+}
+
+/* Image placeholder helper */
+.img-placeholder {
+  background: var(--navy-light);
+  border: 2px dashed var(--border-blue);
+  border-radius: var(--r-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--blue-pale), transparent 60%);
+}
+.img-placeholder-icon { font-size: 32px; position: relative; z-index: 1; }
+.img-placeholder span { position: relative; z-index: 1; }
+.img-placeholder img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Card base */
+.card {
+  background: var(--navy-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  transition: var(--transition);
+}
+.card:hover {
+  border-color: var(--border-blue);
+  box-shadow: var(--shadow-blue);
+}
+
+/* Animations */
+@keyframes fadeUp   { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+@keyframes floatY   { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+@keyframes pulse    { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.6;transform:scale(1.3);} }
+@keyframes shimmer  { 0%{background-position:-400px 0;} 100%{background-position:400px 0;} }
+@keyframes rotateSlow { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+
+.anim-up   { animation: fadeUp  0.7s ease both; }
+.anim-in   { animation: fadeIn  0.5s ease both; }
+.anim-d1   { animation-delay: 0.1s; }
+.anim-d2   { animation-delay: 0.2s; }
+.anim-d3   { animation-delay: 0.3s; }
+.anim-d4   { animation-delay: 0.4s; }
+.anim-d5   { animation-delay: 0.5s; }
