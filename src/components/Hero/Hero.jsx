@@ -70,11 +70,11 @@ export default function Hero() {
           <div className="hero__img-main img-placeholder" style={{ height: 400 }}>
             
              
-              {/* <img src="/images/doctor.png" alt="iDentist Clinic" /> */}
+              {/* <img src="/images/docmin.png" alt="iDentist Clinic" /> */}
            
-            {/* <span className="img-placeholder-icon">🏥</span>
-            <span>Add clinic / doctor image<br />(1200 × 800px recommended)</span>
-            <code className="hero__img-hint">src="/assets/images/clinic-hero.jpg"</code> */}
+            <span className="img-placeholder-icon">🏥</span>
+            <span> clinic / doctor image<br /></span>
+            <code className="hero__img-hint">Dr Prabhat's IDentist Dental Clinic</code>
           </div>
          
 
